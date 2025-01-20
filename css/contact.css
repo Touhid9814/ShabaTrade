@@ -1,0 +1,124 @@
+/* Contact Section */
+.contact-section {
+    padding: 50px 0;
+    background-color: #E7F3FF; /* Sky blue background for the entire section */
+}
+
+.contact-container {
+    display: flex;
+    gap: 30px;
+    margin: auto;
+    background-color: transparent; /* Transparent as the container's parent already has sky blue */
+    padding: 20px 200px;
+}
+
+.contact-form {
+    width: 50%;
+    background-color: #E7F3FF; /* Inner form container sky blue */
+    padding: 20px 0px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: Black;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 95%;
+    padding: 14px; /* Increased height */
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Increased border-radius */
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #87ceeb; /* Sky blue color for placeholder */
+    font-size: 18px; /* Larger font size for placeholder */
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: rgb(34, 30, 30);
+    color: #fff;
+    border: none;
+    padding: 14px 20px; /* Slightly increased padding */
+    cursor: pointer;
+    border-radius: 12px; /* Increased border-radius */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: Gray;
+}
+
+.contact-image{
+    width: 50%;
+}
+
+.contact-image img {
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1460px) {
+    .contact-container {
+        padding: 20px 100px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contact-container {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .contact-container {
+        flex-direction: column-reverse;
+        padding: 20px 10px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+    .contact-image{
+        width: 100%;
+    }
+    .contact-image img {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact-container {
+        flex-direction: column-reverse;
+        padding: 20px 10px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+    .form-group input, 
+    .form-group textarea {
+        width: 92%;
+    }
+    .contact-image{
+        width: 100%;
+    }
+    .contact-image img {
+        width: 350px;
+    }
+}
