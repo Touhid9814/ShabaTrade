@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaba Trade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5f5;
+            color: #333;
+        }
+        h1 {
+            text-align: left;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #00448c;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            width: 30%;
+            height: 300px; /* Increased height */
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 200px; /* Adjusted height */
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: #007BFF;
+        }
+        .card-content p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .load-more {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+        }
+        .load-more:hover {
+            background: linear-gradient(135deg, #0056b3, #004095);
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navigation">
+            <a href="../index.html" id="home" class="title">Shaba Trade International</a>
+            <ul class="menu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#products">Products</a></li>
+                <li><a href="cards.html">Portfolio</a></li>
+                <li><a href="../index.html#contact" class="contact-btn">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="responsive" class="responsive-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html">Products</a></li>
+            <li><a href="cards.html">Portfolio</a></li>
+            <li><a href="../index.html" class="contact-btn">Contact</a></li>
+        </div>
+    </nav>
+
+    <div><h2>Portfolio of Successful Orders</h2></div>
+    
+    <div class="container" id="card-container">
+        <!-- Cards will be dynamically loaded here -->
+    </div>
+    <button class="load-more" id="load-more">Load More</button>
+
+    <script>
+        let cardData = [
+            { image: 'Photo1.jpeg', title: 'Successful Delivery of Pickling Oils', description: 'Buyer: MASTER RACKS LIMITED', link: 'buyer.html' },
+            // { image: 'Photo2.jpeg', title: 'Order 2', description: 'Short description of Order 2', link: 'details2.html' },
+            // { image: 'Photo3.jpeg', title: 'Order 3', description: 'Short description of Order 3', link: 'details3.html' },
+            // Add more data here
+        ];
+
+        let currentIndex = 0;
+        const cardsPerLoad = 9;
+
+        function loadCards() {
+            const container = document.getElementById('card-container');
+            for (let i = 0; i < cardsPerLoad && currentIndex < cardData.length; i++) {
+                const card = cardData[currentIndex];
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.onclick = () => {
+                    window.location.href = card.link; // Redirects to detail page
+                };
+                cardElement.innerHTML = `
+                    <img src="${card.image}" alt="${card.title}">
+                    <div class="card-content">
+                        <h3>${card.title}</h3>
+                        <p><b>${card.description}</b></p>
+                    </div>
+                `;
+                container.appendChild(cardElement);
+                currentIndex++;
+            }
+
+            if (currentIndex >= cardData.length) {
+                document.getElementById('load-more').style.display = 'none';
+            }
+        }
+
+        document.getElementById('load-more').addEventListener('click', loadCards);
+
+        // Load initial cards
+        loadCards();
+    </script>
+</body>
+</html>
