@@ -14,8 +14,13 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slickCustomer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <div id="home"></div>
 
 <nav>
@@ -24,7 +29,7 @@
         <ul class="menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="Portfolio/cards.html">Portfolio</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="product/Brochure_ Shaba_Trade .pdf" download="Brochure_ Shaba_Trade .pdf">Brochure</a></li>
             <li><a href="#contact" class="contact-btn">Contact</a></li>
         </ul>
@@ -35,7 +40,7 @@
     <div id="responsive" class="responsive-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#products">Products</a></li>
-        <li><a href="Portfolio/cards.html">Portfolio</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#brochure">Brochure</a></li>
         <li><a href="#contact" class="contact-btn">Contact</a></li>
     </div>
@@ -84,9 +89,27 @@
     </div>
 </section>
 
+<h2 style="text-align: center;">
+    Our Customers and Partners
+</h2>
+
+    <div class="customer-slider">
+        <div class="customer-slide">
+            <img src="Images/logos/marnlogo.png" alt="Company 1">
+            
+        </div>
+		<div class="customer-slide">
+            <img src="Images/logos/masterRackLogo.jpg" alt="Company 1">
+            
+        </div>
+		<div class="customer-slide">
+            <img src="Images/logos/AkijLogo.webp" alt="Company 1">
+           
+        </div>
+    </div>
+
 <section class="columns">
     <div class="column">
-        <h2>Our Customers and Partners</h2>
             <p class="description">
                 We are proud to have worked with a diverse range of customers and partners.
                 <br>At Shaba Trade, we understand that success goes beyond profitability; 
@@ -414,5 +437,6 @@
 
 <script src="slide.js"></script>
 <script src="script.js"></script>
+<script src="scripts/slickCustomer.js"></script>
 </body>
 </html>

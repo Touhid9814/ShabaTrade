@@ -1,0 +1,20 @@
+.customer-slider {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.customer-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    
+}
+
+.customer-slide img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
