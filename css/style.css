@@ -178,3 +178,61 @@ cursor: pointer;
         flex-basis: 100%;
     }
 } */
+
+
+/* Event section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .card-wrapper {
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: center;     /* Center the card vertically */
+    height: 60vh;            /* Increase the height of the container */
+  }
+  
+  .blog-card {
+    width: 700px;            /* Increase the width of the card */
+    height: 400px;           /* Increase the height of the card */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .card-header {
+    padding: 20px;
+    background-color: #009688;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .card-images {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .card-images img {
+    width: 32%;
+    border-radius: 4px;
+    object-fit: cover;
+    height: 150px; /* Increase the height of images */
+  }
+  
+  .card-images img:hover {
+    opacity: 0.8;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
