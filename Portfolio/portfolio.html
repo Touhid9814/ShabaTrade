@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card { cursor: pointer; }
+    .details-view { display: none; }
+    .details-view.active { display: block; }
+    .fixed-img {
+      width: 90%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .details-view .fixed-img {
+      aspect-ratio: 1 / 1;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+    .card-title {
+      color: #007BFF;
+    }
+    .buyer {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<button class="btn btn-secondary mt-3"  onclick="goBackMain()" style="margin-left: 30px;">Back to Home</button>
+<div class="container my-5">
+  <div class="row" id="cardContainer">
+    <!-- Card 1 -->
+    <div class="col-md-6 mb-4">
+      <div class="card" onclick="showDetails('detail1')">
+        <div class="row g-0">
+          <div class="col-6">
+            <img src="Order/Photo1.jpeg" class="fixed-img rounded-start" alt="...">
+            <img src="Order/Photo3.jpeg" class="fixed-img rounded-start mt-2" alt="...">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Successful Delivery of Pickling Oils</h5>
+              <b class="buyer">Buyer: MASTER RACKS LIMITED</b>
+              <p class="card-text">We are delighted to share that our recent shipment of high-quality pickling oils has successfully reached our valued buyer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-6 mb-4">
+      <div class="card" onclick="showDetails('detail2')">
+        <div class="row g-0">
+          <div class="col-6">
+            <img src="Order/HRC_Loading.jpeg" class="fixed-img rounded-start" alt="...">
+            <img src="Order/HRC_Loading2.jpeg" class="fixed-img rounded-start mt-2" alt="...">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Waiting for shipment at Tianjin port</h5>
+              <p class="card-text">Alhamdulillah 🪴 
+                It's a big deal 
+                With 
+                 Bangladeshi buyers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-6 mb-4">
+      <div class="card" onclick="showDetails('detail3')">
+        <div class="row g-0">
+          <div class="col-6">
+            <img src="Order/HRP.jpeg" class="fixed-img rounded-start" alt="...">
+            <img src="Order/HRP2.jpeg" class="fixed-img rounded-start mt-2" alt="...">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Successful Delivery of HR Plate</h5>
+              <b class="buyer">Buyer: MARN STEEL STRUCTURE LIMITED</b>
+              <p class="card-text">Successful delivery of HR plates for a construction site of Marn Steel in Dhaka. Local logistics handled seamlessly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-6 mb-4">
+      <div class="card" onclick="showDetails('detail4')">
+        <div class="row g-0">
+          <div class="col-6">
+            <img src="Order/Loading.jpeg" class="fixed-img rounded-start" alt="...">
+            <img src="Order/Loading2.jpeg" class="fixed-img rounded-start mt-2" alt="...">
+          </div>
+          <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title">Loading HR Coils at Port of China</h5>
+              <p class="card-text">Loading finished for Bangladeshi buyer 👌</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details Section -->
+  <div id="detailsSection">
+    <div class="details-view" id="detail1">
+      <h3>Successful Delivery of Pickling Oils</h3>
+      <p>We are delighted to share that our recent shipment of high-quality pickling oils has successfully reached our valued buyer. The order was urgent and processed through expedited sea freight. Customs clearance was also handled by our team.</p>
+      <div class="row">
+        <div class="col-md-3"><img src="Order/Photo1.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/Photo2.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/Photo3.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+      </div>
+      <button class="btn btn-secondary mt-3" onclick="goBack()">Back to Orders</button>
+    </div>
+    <div class="details-view" id="detail2">
+      <h3>Waiting for shipment at Tianjin port</h3>
+      <p>HR coils awaiting shipment at Tianjin Port, carefully packed and ready for loading. All documentation and export procedures are in place to ensure a smooth and timely dispatch. Coordination with shipping agents is ongoing to meet the scheduled departure.</p>
+      <div class="row">
+        <div class="col-md-3"><img src="Order/HRC_Loading.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/HRC_Loading2.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/HRC_Loading3.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+      </div>
+      <button class="btn btn-secondary mt-3" onclick="goBack()">Back to Orders</button>
+    </div>
+    <div class="details-view" id="detail3">
+      <h3>Successful Delivery of HR Plate</h3>
+      <b class="buyer">Buyer: MARN STEEL STRUCTURE LIMITED</b>
+      <p>Successful delivery of 150 MT HR plates to Marn Steel's construction site in Dhaka. The plates, sourced from a reputed mill in China, were unloaded smoothly and on schedule. Local logistics, including transport and on-site handling, were coordinated efficiently to ensure a hassle-free delivery experience.</p>
+      <div class="row">
+        <div class="col-md-3"><img src="Order/HRP.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/HRP2.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/HRP3.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+      </div>
+      <button class="btn btn-secondary mt-3" onclick="goBack()">Back to Orders</button>
+    </div>
+    <div class="details-view" id="detail4">
+      <h3>Loading HR Coils at Port of China</h3>
+      <p>Loading successfully completed for our Bangladeshi buyer. Coils are secured and ready for shipment, with all export formalities finalized for timely dispatch.</p>
+      <div class="row">
+        <div class="col-md-3"><img src="Order/Loading.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/Loading2.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+        <div class="col-md-3"><img src="Order/Loading3.jpeg" class="img-fluid rounded mb-2 fixed-img" /></div>
+      </div>
+      <button class="btn btn-secondary mt-3" onclick="goBack()">Back to Orders</button>
+    </div>
+</div>
+</div>
+<script>
+  function showDetails(id) {
+    document.getElementById("cardContainer").style.display = "none";
+    document.querySelectorAll(".details-view").forEach(el => el.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+
+  function goBack() {
+    document.getElementById("cardContainer").style.display = "flex";
+    document.querySelectorAll(".details-view").forEach(el => el.classList.remove("active"));
+  }
+  function goBackMain() {
+    window.location.href = "../index.html"; 
+  }
+</script>
+
+</body>
+</html>
